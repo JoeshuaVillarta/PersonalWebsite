@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology-Related Blog</title>
+
+    <style type="text/css">
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #FFF6E9;
+            margin: 0;
+            padding: 0;
+            font-family: Tahoma, sans-serif;
+            color: #333333;
+        }
+
+        nav {
+            background-color: #2D292E;
+            padding: 20px 60px;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            white-space: nowrap;
+        }
+
+        .logo {
+            width: 65px;
+            height: 65px;
+            border-radius: 10px;
+            margin-right: 40px;
+            vertical-align: middle;
+        }
+
+        nav a {
+            display: inline-block;
+            vertical-align: middle;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-right: 10px;
+            border: 2px solid #00000000;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        nav a:link { 
+            color: #FFFFFF; 
+        }
+        
+        nav a:visited { 
+            color: #C59FE2; 
+        }
+
+        nav a:hover {
+            background-color: #E8C9D2;
+            color: #2D292E;
+        }
+
+        nav a.active-link {
+            background-color: #E8C9D2;
+            color: #2D292E;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 50px;
+            color: #F7D1CD;
+            text-transform: uppercase;
+            background-color: #2A262B;
+            padding: 25px 60px;
+            display: block;
+            width: fit-content;
+            margin: 60px auto;
+            border-radius: 100px;
+            word-spacing: 15px;
+            letter-spacing: 5px;
+            text-shadow: 3px 3px #868FC3;
+            border: 5px solid #7d2769;
+            box-shadow: 0 10px 20px #d19adb26;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .toc {
+            background-color: #B5927E;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .toc span {
+            display: block;
+            font-weight: bold;
+            color: #FFF6E9;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .toc a {
+            display: inline-block;
+            background-color: #FFF6E9;
+            color: #713274;
+            padding: 8px 20px;
+            margin: 5px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .toc a:hover {
+            background-color: #713274;
+            color: #FFFFFF;
+            transform: scale(1.05);
+        }
+
+        .blog-post {
+            background-color: #E8C2CA;
+            padding: 50px;
+            border-radius: 20px;
+            border: 2px solid #B5927E;
+            margin-bottom: 50px;
+            line-height: 1.8;
+            box-shadow: 0 5px 15px #0000000D;
+            overflow: hidden;
+        }
+
+        h2 {
+            font-family: Georgia, serif;
+            color: #713274;
+            font-size: 30px;
+            margin-top: 0;
+            border-bottom: 3px solid #713274;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 30px;
+            scroll-margin-top: 120px;
+            text-shadow: 2px 2px 4px #868FC399;
+        }
+
+        p {
+            text-indent: 50px;
+            text-align: justify;
+            margin-bottom: 20px;
+            font-size: 18px;
+            word-spacing: 2px;
+        }
+        
+        .bio-img {
+            border: 10px solid #FFFFFF;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            margin-bottom: 4px;
+        }
+
+        #intro-img {
+            float: right;
+            margin-left: 30px;
+            width: 320px;
+            height: auto;
+            margin-bottom: 9px;
+        }
+
+        #google-img {
+            float: left;
+            margin-right: 30px;
+            width: 300px;
+            height: auto;
+            margin-bottom: 9px;
+        }
+
+        #canva-img {
+            float: right;
+            margin-left: 30px;
+            width: 300px;
+            height: auto;
+        }
+
+        #projects {
+            float: left;
+            margin-right: 30px;
+            width: 460px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .back-to-top-btn {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 10px 30px;
+            background-color: #713274;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            clear: both;
+        }
+
+        .back-to-top-btn:hover {
+            background-color: #2A262B;
+            color: #ea95c2;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background-color: #2D292E;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 30px 0;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        hr {
+            border: 0;
+            height: 2px;
+            background: #B5927E;
+            margin: 40px 0;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="top"></div>
+
+    <nav>
+        <img src="../IMAGES/logo.png" alt="Logo" class="logo">
+        <a href="../index.html">Home</a>
+        <a href="biography.html">Biography</a>
+        <a href="technology_related.html" class="active-link">Technology-Related</a>
+        <a href="personal.html">Personal Blog</a>
+        <a href="future_goals.html">Future and Career Goals</a>
+        <a href="photo_dump.html">Photo Dump</a>  
+        <a href="mailto:joeshualouisvillarta@gmail.com">Contact</a>
+    </nav>
+
+    <h1>The Productivity Tools<br>That Made My Life Easier</h1>
+
+    <div class="container">
+        <div class="toc">
+            <span>Quick Navigation</span>
+            <a href="#intro">How It All Started</a>
+            <a href="#body">They Made My Life Easier</a>
+            <a href="#conclusion">How I Improved My Skills</a>
+        </div>
+
+        <article class="blog-post">
+            <h2 id="intro">How It All Started</h2>
+            <img src="../IMAGES/tech_related_pics/microsoft_office.jpg" alt="Microsoft Office" class="bio-img" id="intro-img" title="MS Office">
+            <p>Ever since I was an elementary student, I always used a <b>computer</b> mainly to play games and watch videos online. Back then, I never used it for school activities or tasks because I did not know how to utilize it for academic purposes. I was already comfortable using a computer, but only for entertainment, not for <b>productivity</b>. As I progressed in my education, my school tasks gradually became more challenging and required <b>digital submission</b>. That was when the consequences of my earlier habits started to show. Despite spending a lot of time on the computer, I lacked basic skills in productivity tools such as <b>Microsoft Office</b> because I never really practiced using them. When I started using Microsoft Office for schoolwork, I initially found it uninteresting and difficult to navigate because the interface felt <i>medyo magulo</i> and overwhelming for a beginner like me. However, as time went on, I discovered new productivity tools that suited my preferences better, particularly <b>Google Workspace</b> and <b>Canva</b>. These tools felt more <b>user-friendly, organized, and visually appealing</b>, which made learning and completing school tasks less stressful. <b>Google Workspace</b> helped me collaborate easily, store files online, and work anywhere, while <b>Canva</b> also allowed me to collaborate and express creativity through clean and unique template designs.</p>
+            
+            <hr>
+
+            <h2 id="body">They Made My Life Easier</h2>
+            <img src="../IMAGES/tech_related_pics/google_workspace.png" alt="Google Workspace" class="bio-img" id="google-img" title="Google Workspace">
+            <p>When I started using <b>Google Workspace</b> and <b>Canva</b>, my life became easier. These productivity tools are easier for me to use, allowing me to complete my school tasks faster and in a more organized way. <b>Google Workspace</b> helps me edit documents, create presentations, and manage my files efficiently. Because it is <b>cloud-based</b>, I can access my work anytime and on different devices, which makes studying more <b>flexible and convenient</b>. Since Google Workspace is cloud-based, it also allows me to <b>collaborate</b> with my classmates on group-related tasks. As a result, all of us are able to work on our individual parts on time and more efficiently. There are also times when we can see mistakes in each other’s work, and because of the <b>collaborative features</b> of Google Workspace, we are able to help one another correct those mistakes in <b>real time</b>. Another thing that I liked about using Google Workspace is that it is <b>free</b>, unlike Microsoft Office, which often requires payment if Microsoft 365 is not installed. Although Microsoft Office has a free version, its features are limited, and this can affect the completion and quality of school tasks. However, the main drawback I experience when using Google Workspace is that it cannot be fully used <b>offline</b>. When there is no internet connection, accessing documents and making changes becomes difficult, which can sometimes slow down my progress. Unlike Microsoft Office, it can still be used offline and allows files to be saved easily on the device. Despite this limitation, <b>Google Workspace</b> remains very helpful for my schoolwork because of its <b>accessibility</b>, strong collaboration features, and ease of use, making it a practical tool for most of my academic works.</p>
+            
+            <img src="../IMAGES/tech_related_pics/canva.jpg" alt="Canva Design" class="bio-img" id="canva-img" title="Canva">
+            <p>In terms of <b>Canva</b>, I find it easier and more enjoyable to use compared to <b>Microsoft PowerPoint</b> because of its unique features. Its <b>drag-and-drop interface</b> allows me to easily move, resize, and edit different elements. There is also a feature that helps me align elements, such as text and images, perfectly, which improves the overall quality of my designs and makes my work look more <b>professional</b>. I also like Canva’s extensive <b>library of templates</b>, which includes a variety of ready-made designs. These templates give me ideas for different types of designs that I can use for my graphic-related school tasks, such as creating brochures, posters, PowerPoint slides, and more. This makes it much easier to decide on a design and reduces the time and effort needed to create one from scratch. Another feature I appreciate in Canva is its <b>wide selection of fonts</b>. It offers many unique font styles that I can easily use when editing my designs. Compared to Microsoft PowerPoint, where fonts often need to be downloaded separately, Canva already has these fonts built in, making the design process more <b>convenient</b>. In addition, Canva has a built-in <b>screen recording feature</b>, which I frequently use, especially when recording PowerPoint slideshow presentations. This feature saves time and allows me to complete my reporting tasks more efficiently. Another feature that I really like about Canva is its <b>collaboration feature</b>. Similar to Google Workspace, Canva allows my group members and me to work on a project at the same time during group-related tasks. Because of this, our work becomes faster and more efficient, as we can easily share ideas, make changes in real time, and help one another improve the design. This collaboration not only saves time but also results in better and more <b>polished design outputs</b>.</p>
+
+            <hr>
+
+            <h2 id="conclusion">How I Improved My Skills</h2>
+            <img src="../IMAGES/tech_related_pics/projects.png" alt="Canva Projects" class="bio-img" id="projects" title="My Old Canva Projects">
+            <p>Overall, because of <b>Google Workspace</b> and <b>Canva</b>, completing my schoolworks has become much easier, more efficient, and more enjoyable. From using the computer mainly for gaming and watching videos, I learned to change my perspective and use computer in a more meaningful and productive way. These tools helped me realize that computers are not just sources of entertainment but <b>powerful tools</b> that can support learning, organization, creativity, and collaboration. Through regular use of Google Workspace, I became more <b>organized and disciplined</b> in managing my files, meeting deadlines, and working with my classmates, especially in research papers and group projects. <b>Canva</b>, on the other hand, helped me develop my <b>creativity and confidence</b> by allowing me to produce visually appealing and professional-looking graphic-related outputs. Although Google Workspace and Canva have certain limitations, that does not stop me from accomplishing my school works. They made my academic tasks easier to accomplish and helped <b>reduce the stress</b> that usually comes with it. More importantly, these tools taught me that doing school tasks digitally does not have to be difficult or overwhelming if I am willing to explore new tools and improve my skills. They helped enhance my <b>digital literacy, creativity, time management, and teamwork</b>, which are all essential skills in today’s technology-driven world. As I continue my academic journey, I plan to keep using and learning more about these productivity tools because I believe they will be very useful in my future career.</p>
+
+            <a href="#top" class="back-to-top-btn">Back to Top</a>
+        </article>
+    </div>
+
+    <footer>&copy; 2026 Joeshua Louis S. Villarta. All Rights Reserved.</footer>
+
+</body>
+</html>
