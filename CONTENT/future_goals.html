@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future and Career Goals Blog</title>
+
+    <style type="text/css">
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #FFF6E9;
+            margin: 0;
+            padding: 0;
+            font-family: Tahoma, sans-serif;
+            color: #333333;
+        }
+
+        nav {
+            background-color: #2D292E;
+            padding: 20px 60px;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            white-space: nowrap;
+        }
+
+        .logo {
+            width: 65px;
+            height: 65px;
+            border-radius: 10px;
+            margin-right: 40px;
+            vertical-align: middle;
+        }
+
+        nav a {
+            display: inline-block;
+            vertical-align: middle;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-right: 10px;
+            border: 2px solid #00000000;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        nav a:link { 
+            color: #FFFFFF; 
+        }
+
+        nav a:visited { 
+            color: #C59FE2; 
+        }
+        
+        nav a:hover {
+            background-color: #E8C9D2;
+            color: #2D292E;
+        }
+
+        nav a.active-link {
+            background-color: #E8C9D2;
+            color: #2D292E;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 50px;
+            color: #F7D1CD;
+            text-transform: uppercase;
+            background-color: #2A262B;
+            padding: 25px 60px;
+            display: block;
+            width: fit-content;
+            margin: 60px auto;
+            border-radius: 100px;
+            word-spacing: 15px;
+            letter-spacing: 5px;
+            text-shadow: 3px 3px #868FC3;
+            border: 5px solid #7d2769;
+            box-shadow: 0 10px 20px #d19adb26;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .toc {
+            background-color: #B5927E;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .toc span {
+            display: block;
+            font-weight: bold;
+            color: #FFF6E9;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .toc a {
+            display: inline-block;
+            background-color: #FFF6E9;
+            color: #713274;
+            padding: 8px 20px;
+            margin: 5px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .toc a:hover {
+            background-color: #713274;
+            color: #FFFFFF;
+            transform: scale(1.05);
+        }
+
+        .blog-post {
+            background-color: #E8C2CA;
+            padding: 50px;
+            border-radius: 20px;
+            border: 2px solid #B5927E;
+            margin-bottom: 50px;
+            line-height: 1.8;
+            box-shadow: 0 5px 15px #0000000D;
+            overflow: hidden;
+        }
+
+        h2 {
+            font-family: Georgia, serif;
+            color: #713274;
+            font-size: 30px;
+            margin-top: 0;
+            border-bottom: 3px solid #713274;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 30px;
+            scroll-margin-top: 120px;
+            text-shadow: 2px 2px 4px #868FC399;
+        }
+
+        p {
+            text-indent: 50px;
+            text-align: justify;
+            margin-bottom: 20px;
+            font-size: 18px;
+            word-spacing: 2px;
+        }
+
+        ul, ol {
+            margin-bottom: 25px;
+            padding-left: 60px;
+            font-size: 18px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .bio-img {
+            border: 10px solid #FFFFFF;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+
+        #laptop-img {
+            float: right;
+            margin-left: 30px;
+            margin-bottom: 14px;
+            width: 350px;
+            height: auto;
+        }
+
+        #skills-img {
+            float: left;
+            margin-right: 30px;
+            margin-bottom: 14px;
+            width: 380px;
+            height: auto;
+        }
+
+        #future-img {
+            float: right;
+            margin-left: 30px;
+            margin-bottom: 11px 10px 10px;
+            width: 400px;
+            height: auto;
+        }
+
+        .back-to-top-btn {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 10px 30px;
+            background-color: #713274;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            clear: both;
+        }
+
+        .back-to-top-btn:hover {
+            background-color: #2A262B;
+            color: #ea95c2;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background-color: #2D292E;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 30px 0;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        hr {
+            border: 0;
+            height: 2px;
+            background: #B5927E;
+            margin: 40px 0;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="top"></div>
+
+    <nav>
+        <img src="../IMAGES/logo.png" alt="Logo" class="logo">
+        <a href="../index.html">Home</a>
+        <a href="biography.html">Biography</a>
+        <a href="technology_related.html">Technology-Related</a>
+        <a href="personal.html">Personal Blog</a>
+        <a href="future_goals.html" class="active-link">Future and Career Goals</a>
+        <a href="photo_dump.html">Photo Dump</a>  
+        <a href="mailto:joeshualouisvillarta@gmail.com">Contact</a>
+    </nav>
+
+    <h1>When Curiosity Meets<br>My Future Career</h1>
+
+    <div class="container">
+        <div class="toc">
+            <span>Quick Navigation</span>
+            <a href="#curiosity">How Curiosity Changed My Mind</a>
+            <a href="#skills">How I Developed My Skills</a>
+            <a href="#plans">My Future Plans</a>
+        </div>
+
+        <article class="blog-post">
+            <h2 id="curiosity">How Curiosity Changed My Mind</h2>
+            <img src="../IMAGES/future_career_goals/my_laptop.jpg" alt="Curiosity in Tech" class="bio-img" id="laptop-img" title="My Acer Nitro 5 Laptop">
+            <p>Ever since I was a child, I have always been curious about how things that is related to technology works. I often use devices and gadgets like <b>computer, gaming console, and cellphone,</b> but I wanted to know how they were created or worked. Back then, the career that I really wanted to pursue was related to being a <b>Seaman and Engineer</b> because of my father. But as time passed, my interest to pursuing that career began to shift away when <strong>I started learning more about computers and basic coding.</strong> This made me excited because I realized that technology is not just for entertainment, but also for learning and creating. I saw how technology can make people like me become successful in life. Because of this, <strong>I started pursuing a career in the tech field.</strong></p>
+            
+            <hr>
+
+            <h2 id="skills">How I Developed My Skills</h2>
+            <img src="../IMAGES/future_career_goals/coding_skills.png" alt="Developing Skills" class="bio-img" id="skills-img" title="My Old Visual Basic Project">
+            <p>When I was in high school, my interest in a tech-related career <strong>continued to grow.</strong> I enjoyed learning new things about technology, especially when the lessons challenged my thinking. Some topics were difficult, but I saw them as chances to improve myself and learn something new. When I made mistakes, I tried to understand what went wrong and how to fix it. Technology helped me become more patient and taught me how to solve problems step by step. I also learned how to manage my time better and stay focused on my schoolwork, especially when I had projects or assignments.</p>
+
+            <ul>
+                <li>Basic coding and programming</li>
+                <li>Using different computer software</li>
+                <li>Problem-solving and logical thinking</li>
+                <li>Explosiveness on driving inside the basket</li>
+                <li>Time management and organization</li>
+            </ul>
+
+            <p><strong>Working on small coding tasks or computer projects made me feel proud of my progress.</strong> I realized that even small improvements could lead to bigger achievements over time. My journey in technology followed these steps:</p>
+            
+            <ol>
+                <li>Exploring and experimenting with applications</li>
+                <li>Learning from mistakes and asking questions</li>
+                <li>Practicing regularly to improve my skills</li>
+                <li>Applying what I learned in school projects and personal tasks</li>
+            </ol>
+
+            <p>Each success, no matter how small, motivated me to keep going. These experiences helped me understand the importance of effort, practice, and perseverance. And these motivated me to always give my best.</p>
+
+            <hr>
+
+            <h2 id="plans">My Future Plans</h2>
+            <img src="../IMAGES/future_career_goals/it_career.jpg" alt="Future Success" class="bio-img" id="future-img" title="What I Expect to be in the Future">
+            <p>Now that I'm a <strong>2nd year Bachelor's of Science in Information and Technology student</strong>, I still haven't decided on which specific IT career I would pursue, but my goal is to always have a successful career in IT field someday. Technology has always fascinated me, and I know that pursuing a career in this field will require effort and dedication because I know to myself that there are a lot of people in this field that are better than me, and I need to work hard and give all my best to gain more opportunities. I want to continue learning new skills and improve the skills I already have. Even though I experience some challenges and failues, I see them as opportunities to grow and improve myself. I have learned that patience, practice, and focus are very important in achieving success, and setting goals for myself has helped me stay motivated and work harder every day. I want to use the knowledge I gain to create solutions that can help others. Working on projects and tasks has taught me the value of perseverance and careful planning. I also want to keep exploring new areas of technology to find what interests me the most. Overall, I believe that my experiences will help me become more confident and capable. I am determined to <strong>work hard, stay curious, and prepare myself</strong> for a bright future in the tech industry and <strong>I will be successful so I can buy all the expensive things that I want.</strong></p>
+            
+            <a href="#top" class="back-to-top-btn">Back to Top</a>
+        </article>
+    </div>
+
+    <footer>&copy; 2026 Joeshua Louis S. Villarta. All Rights Reserved.</footer>
+
+</body>
+</html>
