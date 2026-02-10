@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Dump</title>
+
+    <style type="text/css">
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #FFF6E9;
+            margin: 0;
+            padding: 0;
+            font-family: Tahoma, sans-serif;
+            color: #333333;
+        }
+
+        nav {
+            background-color: #2D292E;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 60px;
+            white-space: nowrap;
+        }
+
+        .logo {
+            width: 65px;
+            height: 65px;
+            border-radius: 10px;
+            vertical-align: middle;
+            margin-right: 40px;
+        }
+
+        nav a {
+            display: inline-block;
+            vertical-align: middle;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-right: 10px;
+            border: 2px solid #00000000;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        nav a:link {
+            color: #FFFFFF;
+        }
+
+        nav a:visited {
+            color: #C59FE2;
+        }
+
+        nav a:hover {
+            background-color: #E8C9D2;
+            color: #2D292E;
+        }
+
+        nav a:focus {
+            outline: none;
+            background-color: #E8C9D2;
+            border: 2px solid #FFFFFF;
+            color: #2D292E;
+        }
+
+        nav a:active {
+            background-color: #D8B4BE;
+            color: #000000;
+        }
+
+        nav a.active-link {
+            background-color: #E8C9D2;
+            color: #2D292E;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 50px;
+            color: #F7D1CD;
+            text-transform: uppercase;
+            background-color: #2A262B;
+            padding: 25px 60px;
+            display: block;
+            width: fit-content;
+            margin: 60px auto;
+            border-radius: 100px;
+            word-spacing: 15px;
+            letter-spacing: 5px;
+            text-shadow: 3px 3px #868FC3;
+            border: 5px solid #7d2769;
+            box-shadow: 0 10px 20px #d19adb26;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .gallery-nav {
+            background-color: #B5927E;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .gallery-nav span {
+            display: block;
+            font-weight: bold;
+            color: #FFF6E9;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .gallery-nav a {
+            display: inline-block;
+            background-color: #FFF6E9;
+            color: #713274;
+            padding: 8px 20px;
+            margin: 5px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .gallery-nav a:hover {
+            background-color: #713274;
+            color: #FFFFFF;
+            transform: scale(1.05);
+        }
+
+        .blog-post {
+            background-color: #E8C2CA;
+            padding: 50px;
+            border-radius: 20px;
+            border: 2px solid #B5927E;
+            margin-bottom: 50px;
+            box-shadow: 0 5px 15px #0000000D;
+        }
+
+        h2 {
+            font-family: Georgia, serif;
+            color: #713274;
+            font-size: 30px;
+            margin-top: 40px;
+            border-bottom: 3px solid #713274;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 30px;
+            scroll-margin-top: 120px;
+            text-shadow: 2px 2px 4px #868FC399;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .photo-card {
+            background-color: #FFFFFF;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .photo-card p {
+            margin: 15px 0 5px;
+            text-align: center;
+            font-weight: bold;
+            color: #713274;
+            font-size: 14px;
+        }
+
+        .back-to-top-btn {
+            display: block;
+            width: fit-content;
+            margin: 40px auto 0;
+            padding: 12px 30px;
+            background-color: #713274;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+            border: 2px solid #713274;
+        }
+
+        .back-to-top-btn:hover {
+            background-color: #2A262B;
+            color: #ea95c2;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background-color: #2D292E;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 30px 0;
+            width: 100%;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="top"></div>
+
+    <nav>
+        <img src="../IMAGES/logo.png" alt="Logo" class="logo">
+        <a href="../index.html">Home</a>
+        <a href="biography.html">Biography</a>
+        <a href="technology_related.html">Technology-Related</a>
+        <a href="personal.html">Personal Blog</a>
+        <a href="future_goals.html">Future and Career Goals</a>
+        <a href="photo_dump.html" class="active-link">Photo Dump</a>  
+        <a href="mailto:joeshualouisvillarta@gmail.com">Contact</a>
+    </nav>
+
+    <h1>Photo Gallery</h1>
+
+    <div class="container">
+        <div class="gallery-nav">
+            <span>Quick Navigation</span>
+            <a href="#homepage-gallery">Homepage</a>
+            <a href="#bio-gallery">Biography</a>
+            <a href="#tech-gallery">Technology-Related</a>
+            <a href="#personal-gallery">Personal</a>
+            <a href="#future-gallery">Future and Career Goals</a>
+        </div>
+
+        <article class="blog-post">
+
+            <h2 id="homepage-gallery">Homepage Photos</h2>
+            <div class="photo-grid">
+                <div class="photo-card">
+                    <a href="../IMAGES/hero-image.jpg">
+                        <img src="../IMAGES/hero-image.jpg" alt="Hero Image" title="My SHS Graduation Picture">
+                    </a>
+                    <p>Senior High Shool Graduation</p>
+                </div>
+            </div>
+            
+            <h2 id="bio-gallery">Biography Photos</h2>
+            <div class="photo-grid">
+                <div class="photo-card">
+                    <a href="../IMAGES/biography_pics/childhood.jpg">
+                        <img src="../IMAGES/biography_pics/childhood.jpg" alt="Childhood" title="Me When I was a Kid">
+                    </a>
+                    <p>My Childhood Days</p>
+                </div>
+                <div class="photo-card">
+                    <a href="../IMAGES/biography_pics/teenage.jpg">
+                        <img src="../IMAGES/biography_pics/teenage.jpg" alt="Teenage" title="My SHS Achievements">
+                    </a>
+                    <p>My Senior High School Achievement</p>
+                </div>
+                <div class="photo-card">
+                    <a href="../IMAGES/biography_pics/college.png">
+                        <img src="../IMAGES/biography_pics/college.png" alt="College" title="Me as a UE Student">
+                    </a>
+                    <p>My College Life at UE</p>
+                </div>
+            </div>
+
+            <h2 id="tech-gallery">Technology-Related Photos</h2>
+            <div class="photo-grid">
+                <div class="photo-card">
+                    <a href="../IMAGES/tech_related_pics/microsoft_office.jpg">
+                        <img src="../IMAGES/tech_related_pics/microsoft_office.jpg" alt="MS Office" title="The Tools I Find Hard to Use">
+                    </a>
+                    <p>Microsoft Office</p>
+                </div>
+                <div class="photo-card">
+                    <a href="../IMAGES/tech_related_pics/google_workspace.png">
+                        <img src="../IMAGES/tech_related_pics/google_workspace.png" alt="Google Workspace" title="My Essential Productivity Apps">
+                    </a>
+                    <p>Google Workspace</p>
+                </div>
+                <div class="photo-card">
+                    <a href="../IMAGES/tech_related_pics/canva.jpg">
+                        <img src="../IMAGES/tech_related_pics/canva.jpg" alt="Canva" title="My Favorite Design Tool">
+                    </a>
+                    <p>Canva Design Tool</p>
+                </div>
+                <div class="photo-card">
+                    <a href="../IMAGES/tech_related_pics/projects.png">
+                        <img src="../IMAGES/tech_related_pics/projects.png" alt="Canva Projects" title="My Layout Design Projects">
+                    </a>
+                    <p>My Old Canva Projects</p>
+                </div>
+            </div>
+
+            <h2 id="personal-gallery">Personal Blog Photos</h2>
+            <div class="photo-grid">
+                <div class="photo-card">
+                    <a href="../IMAGES/personal/student.jpg">
+                        <img src="../IMAGES/personal/student.jpg" alt="Stressed Student" title="Me being Stressed in 2nd Year College">
+                    </a>
+                    <p>As a Stressed 2nd Year BSIT Student</p>
+                </div>
+                <div class="photo-card">
+                    <a href="../IMAGES/personal/elementary.png">
+                        <img src="../IMAGES/personal/elementary.png" alt="Grade 5" title="My Elementary School Days">
+                    </a>
+                    <p>When I was in Grade 5</p>
+                </div>
+                <div class="photo-card">
+                    <a href="../IMAGES/personal/enjoying.jpg">
+                        <img src="../IMAGES/personal/enjoying.jpg" alt="Tagaytay" title="Taking a Break in Tagaytay">
+                    </a>
+                    <p>My Tagaytay Trip Pic</p>
+                </div>
+                <div class="photo-card">
+                    <a href="../IMAGES/personal/beach.jpg">
+                        <img src="../IMAGES/personal/beach.jpg" alt="Beach Trip" title="Relaxing at the Beach">
+                    </a>
+                    <p>Beach Trip with Friends</p>
+                </div>
+            </div>
+
+            <h2 id="future-gallery">Future and Career Goals Photos</h2>
+            <div class="photo-grid">
+                <div class="photo-card">
+                    <a href="../IMAGES/future_career_goals/my_laptop.jpg">
+                        <img src="../IMAGES/future_career_goals/my_laptop.jpg" alt="Laptop" title="My Acer Nitro 5 Laptop">
+                    </a>
+                    <p>My Acer Nitro 5 Laptop</p>
+                </div>
+                <div class="photo-card">
+                    <a href="../IMAGES/future_career_goals/coding_skills.png">
+                        <img src="../IMAGES/future_career_goals/coding_skills.png" alt="VB Project" title="My Old Visual Basic Project">
+                    </a>
+                    <p>My Old Visual Basic Project</p>
+                </div>
+                <div class="photo-card">
+                    <a href="../IMAGES/future_career_goals/it_career.jpg">
+                        <img src="../IMAGES/future_career_goals/it_career.jpg" alt="IT Career" title="What I Expect to be in the Future">
+                    </a>
+                    <p>What I Expect to be in the Future</p>
+                </div>
+            </div>
+
+            <a href="#top" class="back-to-top-btn">Back to Top</a>
+        </article>
+    </div>
+
+    <footer>&copy; 2026 Joeshua Louis S. Villarta. All Rights Reserved.</footer>
+
+</body>
+</html>
