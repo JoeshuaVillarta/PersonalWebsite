@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Blog</title>
+
+    <style type="text/css">
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #FFF6E9;
+            margin: 0;
+            padding: 0;
+            font-family: Tahoma, sans-serif;
+            color: #333333;
+        }
+
+        body {
+            font-family: Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF9ED;
+            color: #333333;
+        }
+
+        nav {
+            background-color: #2D292E;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 60px;
+            white-space: nowrap;
+        }
+
+        .logo {
+            width: 65px;
+            height: 65px;
+            border-radius: 10px;
+            vertical-align: middle;
+            margin-right: 40px;
+        }
+
+        nav a {
+            display: inline-block;
+            vertical-align: middle;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-right: 10px;
+            border: 2px solid #00000000;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        nav a:link {
+            color: #FFFFFF;
+        }
+
+        nav a:visited {
+            color: #C59FE2;
+        }
+
+        nav a:hover {
+            background-color: #E8C9D2;
+            color: #2D292E;
+        }
+
+        nav a:focus {
+            outline: none;
+            background-color: #E8C9D2;
+            border: 2px solid #FFFFFF;
+            color: #2D292E;
+        }
+
+        nav a:active {
+            background-color: #D8B4BE;
+            color: #000000;
+        }
+
+        nav a.active-link {
+            background-color: #E8C9D2;
+            color: #2D292E;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 50px;
+            color: #F7D1CD;
+            text-transform: uppercase;
+            background-color: #2A262B;
+            padding: 25px 60px;
+            display: block;
+            width: fit-content;
+            margin: 60px auto;
+            border-radius: 100px;
+            word-spacing: 15px;
+            letter-spacing: 5px;
+            text-shadow: 3px 3px #868FC3;
+            border: 5px solid #7d2769;
+            box-shadow: 0 10px 20px #d19adb26;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .toc {
+            background-color: #B5927E;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .toc span {
+            display: block;
+            font-weight: bold;
+            color: #FFF6E9;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .toc a {
+            display: inline-block;
+            background-color: #FFF6E9;
+            color: #713274;
+            padding: 8px 20px;
+            margin: 5px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .toc a:hover {
+            background-color: #713274;
+            color: #FFFFFF;
+            transform: scale(1.05);
+        }
+
+        .blog-post {
+            background-color: #E8C2CA;
+            padding: 50px;
+            border-radius: 20px;
+            border: 2px solid #B5927E;
+            margin-bottom: 50px;
+            line-height: 1.8;
+            box-shadow: 0 5px 15px #0000000D;
+            overflow: hidden;
+        }
+
+        h2 {
+            font-family: Georgia, serif;
+            color: #713274;
+            font-size: 30px;
+            margin-top: 0;
+            border-bottom: 3px solid #713274;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 30px;
+            scroll-margin-top: 120px;
+            text-shadow: 2px 2px 4px #868FC399;
+        }
+
+        p {
+            text-indent: 50px;
+            text-align: justify;
+            margin-bottom: 20px;
+            font-size: 18px;
+            word-spacing: 2px;
+        }
+
+        .blog-post p {
+            margin-top: 0;
+        }
+
+        ul, ol {
+            margin-bottom: 25px;
+            padding-left: 60px;
+            font-size: 18px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .bio-img {
+            border: 10px solid #FFFFFF;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        #intro-img {
+            float: right;
+            margin-left: 30px;
+            margin-bottom: 5px;
+            width: 320px;
+            height: auto;
+        }
+
+        #elem-img {
+            float: left;
+            margin-right: 30px;
+            margin-bottom: 15px;
+            width: 300px;
+            height: auto;
+        }
+
+        #enjoying-img {
+            float: right;
+            margin-left: 30px;
+            margin-bottom: 15px;
+            width: 350px;
+            height: auto;
+        }
+
+        #beach-img {
+            float: left;
+            margin-right: 30px;
+            width: 350px;
+            height: auto;
+            margin-bottom: 11px;
+        }
+
+        .back-to-top-btn {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 10px 30px;
+            background-color: #713274;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            clear: both;
+        }
+
+        .back-to-top-btn:hover {
+            background-color: #2A262B;
+            color: #ea95c2;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background-color: #2D292E;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 30px 0;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        hr {
+            border: 0;
+            height: 2px;
+            background: #B5927E;
+            margin: 40px 0;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="top"></div>
+
+    <nav>
+        <img src="../IMAGES/logo.png" alt="Logo" class="logo">
+        <a href="../index.html">Home</a>
+        <a href="biography.html">Biography</a>
+        <a href="technology_related.html">Technology-Related</a>
+        <a href="personal.html" class="active-link">Personal Blog</a>
+        <a href="future_goals.html">Future and Career Goals</a>
+        <a href="photo_dump.html">Photo Dump</a>  
+        <a href="mailto:joeshualouisvillarta@gmail.com">Contact</a>
+    </nav>
+
+    <h1>Progress Over Pressure:<br>How I Learned To Balance My Life</h1>
+
+    <div class="container">
+        <div class="toc">
+            <span>Quick Navigation</span>
+            <a href="#intro">Life as a Student</a>
+            <a href="#body">Difficulties in Life</a>
+            <a href="#conclusion">Lessons Learned</a>
+        </div>
+
+        <article class="blog-post">
+            <h2 id="intro">Life as a Student</h2>
+            <img src="../IMAGES/personal/student.jpg" alt="Student Life" class="bio-img" id="intro-img" title="As a Stressed 2nd Year BSIT Student">
+            <p>Life as a student is really difficult. I feel like <strong>I’m always racing against time because of assigned homework, class schedules, deadlines that need to be met on time, and personal expectations.</strong> Before, I was still able to handle it, and I didn’t get tired easily or struggle much with my academic responsibilities because I chose to focus on them and avoid doing the things I wanted to do outside of academics. However, as time went on, <strong>I started to feel exhausted from everything I was doing.</strong> That’s when I realized that <strong>I had been putting too much pressure on myself to complete and submit my schoolworks</strong> because I was no longer able to rest and prioritize myself. There were even times when I was just trying to survive everyday. As time went by, I started to realize that I had been neglecting myself, and that no one else was pressuring me but <b>myself.</b></p>
+            
+            <hr>
+
+            <h2 id="body">My Difficulties in Personal and Academic Life</h2>
+            <img src="../IMAGES/personal/elementary.png" alt="Elementary Student" class="bio-img" id="elem-img" title="When I was in Grade 5">
+            <p><b>When I was in elementary and junior high school,</b> I was pretty chill with studying and just <b>"easy-going".</b> What I mean by <b>"easy-going"</b> is that I didn’t really prioritize my studies because I could still pass even without giving my best effort. Those were the times I could say I didn’t feel any pressure from school. But when I reached senior high school and college, that’s when my mindset toward studying changed. That’s when I really started pushing myself to study hard, rarely taking rests, and sometimes even feeling guilty if I rested too much and didn’t study at the right time. There were even times when I came to school without any sleep because I chose to study all night rather than rest, because I was afraid that if I didn’t study the lessons thoroughly, I wouldn’t get high grades on quizzes and exams. I used to think that as long as I studied and didn’t do other things I wanted to do, I would get the high grades I wanted. And that was true, I did get the grades I aimed for. But over time, that mindset became exhausting to maintain and think about. Because of this study habit and mindset, I experienced several challenges such as:</p>
+            
+            <ul>
+                <li>Lack of sleep due to studying late at night</li>
+                <li>Feeling guilty whenever I took a break</li>
+                <li>Constant pressure to achieve high grades</li>
+                <li>Neglecting my personal life and hobbies</li>
+            </ul>
+
+            <p>I started <strong>feeling drained, unmotivated, and less focused,</strong> and even simple activities and tasks began to feel difficult to do. That’s when I realized I needed to change this mindset, and I also learned that working hard doesn’t always mean working smart. To improve my balance between academics and personal life, I took several important steps:</p>
+
+            <ol>
+                <li>Set realistic study goals</li>
+                <li>Take regular breaks to recharge</li>
+                <li>Spend time on hobbies and personal interests</li>
+                <li>Maintain a proper sleep schedule</li>
+            </ol>
+
+            <img src="../IMAGES/personal/enjoying.jpg" alt="Enjoying Myself" class="bio-img" id="enjoying-img" title="My Tagaytay Trip Pic">
+            <p>At this point in my college life, <strong>I’ve come to realize the importance of having a balanced academic and personal life.</strong> Right now, my life is really divided between the two, and in the past, most of my attention went to academics rather than my personal life. I’ve learned to value the things I enjoy doing outside of academics, like hanging out with my friends. Before, I didn’t get to spend much time with them or bond because I always chose to prioritize studying, but now I’m trying to make up for the bonding time I missed. I also play basketball regularly now. Before, I rarely had the chance to play, but now I can, and I’m enjoying it. I’m also making sure to get enough sleep because before, I was always lacking sleep since I would finish studying or school tasks late at night. I’ve also started managing my time better so I can do other things I enjoy. I now set more realistic goals without pushing myself to the point of feeling drained, and I make it a priority to rest without feeling guilty. Because of these changes, I’ve learned that I don’t always have to think that my studies must be perfect and commit no mistakes. Instead, what I should focus on is being consistent without pressuring myself to study all the time, even if I don’t always get the perfect grades that I aim to achieve. This is the lesson I’ve learned from making progress, it doesn’t have to be perfect all the time. I just need to study step by step because every step I take in learning always matters.</p>
+
+            <hr>
+
+            <h2 id="conclusion">The Lessons that I Learned</h2>
+            <img src="../IMAGES/personal/beach.jpg" alt="Picture of Myself at a Concert" class="bio-img" id="beach-img" title="Beach Trip with Friends">
+            <p>Even now, I still experience pressure, especially when I get low grades, but <strong>I’m able to overcome it because of everything I’ve learned.</strong> I’ve also realized that experiencing failure is normal because it’s <strong>part of my growth as a person.</strong> Before, it felt like my world would collapse whenever I received low grades, even if they were still passing. Now, it feels normal to me because I know I can still make up for it, and I don’t expect to get the highest grades in every activity or quiz. Of course, the choice is still mine if I want to achieve perfect scores, but if the cost of studying hard is sacrificing my well-being, I would rather choose to study within the time and effort I can give. I always remind myself that growth requires patience and time and should not be rushed. I choose to rest so that I can think more clearly. The most important lesson I’ve learned from balancing my academic and personal life is that I should not pressure myself, because whenever I do, I end up neglecting myself and failing to take care of and value who I am. Whenever I feel pressured, I always remind myself that no one is watching me but myself. <strong>These are the lessons I will carry with me on my journey toward success.</strong></p>
+            
+            <a href="#top" class="back-to-top-btn">Back to Top</a>
+        </article>
+    </div>
+
+    <footer>&copy; 2026 Joeshua Louis S. Villarta. All Rights Reserved.</footer>
+
+</body>
+</html>
