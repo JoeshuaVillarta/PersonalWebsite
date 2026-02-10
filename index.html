@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joeshua Louis Villarta - Homepage</title>
+
+    <script src="https://kit.fontawesome.com/d97f0236f0.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF9ED;
+            color: #333333;
+        }
+
+        nav {
+            background-color: #2D292E;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 60px;
+            white-space: nowrap;
+        }
+
+        .logo {
+            width: 65px;
+            height: 65px;
+            border-radius: 10px;
+            vertical-align: middle;
+            margin-right: 40px;
+        }
+
+        nav a {
+            display: inline-block;
+            vertical-align: middle;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-right: 10px;
+            border: 2px solid #00000000;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        nav a:link {
+            color: #FFFFFF;
+        }
+
+        nav a:visited {
+            color: #C59FE2;
+        }
+
+        nav a:hover {
+            background-color: #E8C9D2;
+            color: #2D292E;
+        }
+
+        nav a:focus {
+            outline: none;
+            background-color: #E8C9D2;
+            border: 2px solid #FFFFFF;
+            color: #2D292E;
+        }
+
+        nav a:active {
+            background-color: #D8B4BE;
+            color: #000000;
+        }
+
+        nav a.active-link {
+            background-color: #E8C9D2;
+            color: #2D292E;
+        }
+
+        .primary {
+            display: inline-block;
+            margin-top: 40px;
+            background-color: #6A1B9A;
+            color: #FFFFFF !important;
+            padding: 20px 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 22px;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 12px #6A1B9A33;
+            border: none;
+        }
+
+        .primary:hover {
+            background-color: #E8C9D2;
+            color: #2D292E !important;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px #00000026;
+        }
+
+        .hero {
+            padding: 80px 0;
+            width: 100%;
+        }
+
+        .hero-text {
+            display: inline-block;
+            vertical-align: middle;
+            width: 45%;
+            margin-left: 10%;
+            margin-right: 2%;
+        }
+
+        .hero-text h1 {
+            font-family: "Merriweather", serif;
+            font-size: 60px;
+            margin: 10px 0;
+            color: #6A1B9A;
+            text-shadow: 3px 3px #868FC3;
+        }
+
+        .hero-text h2 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 40px;
+            margin: 0;
+        }
+
+        .hero-text h3 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 27.5px;
+            margin: 0;
+        }
+
+        .hero-text b {
+            color: #B71414;
+        }
+
+        #profile-img {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 80px;
+            width: 320px;
+            height: 400px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 10px 20px #0000004D;
+        }
+
+        .sub-header {
+            text-align: center;
+            color: #6A1B9A;
+            font-size: 33px;
+            margin: 50px 0 30px;
+        }
+
+        .video-wrapper {
+            max-width: 350px;
+            margin: 20px auto 60px;
+            padding: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding-bottom: 80px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #E8C9D2;
+            padding: 25px;
+            width: 240px;
+            border-radius: 15px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card p {
+            font-size: 20px;
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+        }
+
+        .card i {
+            font-size: 90px;
+            color: #6A1B9A;
+        }
+
+        footer {
+            background-color: #2D292E;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 30px 0;
+            width: 100%;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="IMAGES/logo.png" alt="Logo" class="logo">
+        <a href="index.html" class="active-link">Home</a>
+        <a href="CONTENT/biography.html">Biography</a>
+        <a href="CONTENT/technology_related.html">Technology-Related</a>
+        <a href="CONTENT/personal.html">Personal Blog</a>
+        <a href="CONTENT/future_goals.html">Future and Career Goals</a>
+        <a href="CONTENT/photo_dump.html">Photo Dump</a>
+        <a href="mailto:joeshualouisvillarta@gmail.com">Contact</a>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-text">
+            <h2><i>Kamusta Kaibigan!</i> I'm</h2>
+            <h1>Joeshua Louis S. Villarta</h1>
+            <h3>2nd Year Bachelor of Science in Information Technology Student at <b>University of the East-Manila</b></h3>
+            <a href="CONTENT/biography.html" class="primary">Explore My Story</a>
+        </div>
+        
+        <img src="IMAGES/hero-image.jpg" id="profile-img" alt="Joeshua Louis S. Villarta">
+    </div>
+
+    <div class="video-wrapper">
+        <video controls title="About My IT Journey">
+            <source src="VIDEOS/ABOUT ME.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <h3 class="sub-header">What can you learn in this page?</h3>
+
+    <div class="card-container">
+        <div class="card">
+            <p>Learn more about my personal and academic life</p>
+            <i class="fa-solid fa-person"></i>
+        </div>
+        <div class="card">
+            <p>Explore the things that I love the most</p>
+            <i class="fa-solid fa-heart"></i>
+        </div>
+        <div class="card">
+            <p>Find out about my future career plans</p>
+            <i class="fa-solid fa-rocket"></i>
+        </div>
+    </div>
+
+    <footer>&copy; 2026 Joeshua Louis S. Villarta. All Rights Reserved.</footer>
+
+</body>
+</html>
